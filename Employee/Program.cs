@@ -1,7 +1,7 @@
 ﻿     internal class Program
     {
-        static void Main(string[] args)
-        {
+    static void Main(string[] args)
+    {
         //  List<Employee> employees = new List<Employee>();
         //for(int i=0;i<10;i++)
         //{
@@ -14,9 +14,9 @@
 
 
         //List<Employee> employees = new List<Employee>();
-         
+
         // Object Initializer
-         Employee employee= new Employee(1,"ajay", "HR", 90000);
+        Employee employee = new Employee(1, "ajay", "HR", 90000);
 
         // List Initializer 
         List<Employee> employees = new List<Employee>
@@ -31,29 +31,23 @@
         };
 
         var list1 = (from emp in employees
-                     where emp.salary > 10000 && emp.salary<25000
+                     where emp.salary > 10000 && emp.salary < 25000
                      select emp).ToList();
 
 
         list1 = employees.Where(x => x.salary > 10000 && x.salary < 25000).ToList();
-            
-list1= (from emp in employees
-        where emp.dept.Contains("HR")
-        select emp).ToList();
+
+        list1 = (from emp in employees
+                 where emp.dept.Contains("HR")
+                 select emp).ToList();
         list1 = employees.Where(x => x.dept.Contains("HR")).ToList();
 
         list1 = (from emp in employees
                  select emp).ToList();
-        
-        list1= employees.ToList();
 
-        list1 = (from emp in employees
-                 select emp.dept).ToList();
-
-        list1 = employees.Select(x => x.salary).ToList();
+        list1 = employees.ToList();
 
 
-
-
+        }
     }
  
